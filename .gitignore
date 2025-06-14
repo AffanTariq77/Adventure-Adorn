@@ -1,0 +1,12 @@
+# .NET
+/Backend/bin/
+/Backend/obj/
+/Backend/*.user
+
+# Angular
+/frontend/node_modules/
+/frontend/dist/
+
+# System
+.DS_Store
+*.log
