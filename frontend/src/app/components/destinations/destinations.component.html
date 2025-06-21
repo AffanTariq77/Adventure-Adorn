@@ -1,0 +1,84 @@
+<!-- Destinations Section -->
+<section class="destinations" id="destinations">
+  <div class="container">
+    <div class="destinations-header">
+      <h1 class="section-title">Popular Destinations</h1>
+      <p class="section-subtitle">Explore the most beautiful places in Pakistan</p>
+      
+      <!-- Search and Filter -->
+      <div class="search-filter">
+        <div class="search-box">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="text" placeholder="Search destinations..." [(ngModel)]="searchQuery" (input)="filterDestinations()">
+        </div>
+        <div class="filter-options">
+          <select [(ngModel)]="selectedDifficulty" (change)="filterDestinations()">
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Hard">Hard</option>
+          </select>
+          <select [(ngModel)]="selectedLocation" (change)="filterDestinations()">
+            <option value="">All Locations</option>
+            <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+            <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Sindh">Sindh</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="destinations-grid">
+      <div class="destination-card" *ngFor="let destination of filteredDestinations">
+        <div class="destination-image">
+          <img [src]="destination.image" [alt]="destination.name" [title]="destination.name">
+          <div class="destination-overlay">
+            <button class="btn-explore" [attr.aria-label]="'Explore ' + destination.name" [title]="'Explore ' + destination.name" (click)="exploreDestination(destination)">
+              Explore
+            </button>
+          </div>
+          <div class="destination-badge" [class]="destination.difficulty.toLowerCase()">
+            {{destination.difficulty}}
+          </div>
+        </div>
+        <div class="destination-content">
+          <h3>{{destination.name}}</h3>
+          <p class="destination-location">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            {{destination.location}}
+          </p>
+          <p class="destination-description">{{destination.description}}</p>
+          <div class="destination-details">
+            <span class="duration">
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              {{destination.duration}}
+            </span>
+            <span class="difficulty">
+              <i class="fas fa-mountain" aria-hidden="true"></i>
+              {{destination.difficulty}}
+            </span>
+          </div>
+          <div class="destination-meta">
+            <span class="price">From ${{destination.price}}</span>
+            <span class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              {{destination.rating}}
+            </span>
+          </div>
+          <button class="btn-book-destination" (click)="bookDestination(destination)" [attr.aria-label]="'Book ' + destination.name">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div class="no-results" *ngIf="filteredDestinations.length === 0">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <h3>No destinations found</h3>
+      <p>Try adjusting your search criteria or browse all destinations</p>
+      <button class="btn-reset" (click)="resetFilters()">Reset Filters</button>
+    </div>
+  </div>
+</section>

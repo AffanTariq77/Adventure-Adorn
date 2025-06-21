@@ -1,0 +1,55 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <i class="fas fa-mountain"></i>
+          <span>Adventure Adorn</span>
+        </div>
+        <p>Your gateway to unforgettable adventures in Pakistan. Discover hidden treasures, experience rich culture, and create memories that last a lifetime.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a routerLink="/home">Home</a></li>
+          <li><a routerLink="/destinations">Destinations</a></li>
+          <li><a routerLink="/hotels">Hotels</a></li>
+          <li><a routerLink="/car-rental">Car Rental</a></li>
+          <li><a routerLink="/about">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a routerLink="/contact">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Safety Guidelines</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe to get travel tips and exclusive offers</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" [(ngModel)]="email">
+          <button class="btn-subscribe" (click)="subscribeNewsletter()">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Adventure Adorn. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
