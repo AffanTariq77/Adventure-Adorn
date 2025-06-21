@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -23,7 +23,7 @@ namespace Blaze.Repository
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
 
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseSqlServer(connectionString);
 
             return new BlazeContext(optionsBuilder.Options);
         }

@@ -28,7 +28,7 @@ Console.WriteLine($"Environment: {builder.Environment.EnvironmentName}");
 
 // Configure DbContext
 builder.Services.AddDbContext<BlazeContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configure Identity
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>

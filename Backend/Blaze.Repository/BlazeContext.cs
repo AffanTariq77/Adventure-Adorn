@@ -1,4 +1,4 @@
-﻿using Blaze.Domain.Entities;
+using Blaze.Domain.Entities;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -30,7 +30,7 @@ namespace Blaze.Repository
             if (!optionsBuilder.IsConfigured && _configuration != null)
             {
                 var connectionString = _configuration.GetConnectionString("DefaultConnection");
-                optionsBuilder.UseNpgsql(connectionString);
+                optionsBuilder.UseSqlServer(connectionString);
             }
         }
 
