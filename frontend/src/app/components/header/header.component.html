@@ -1,0 +1,68 @@
+<!-- Header/Navigation -->
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" routerLink="/home">
+        <i class="fas fa-mountain"></i>
+        <span class="logo-text">Adventure Adorn</span>
+      </div>
+      
+      <div class="nav-menu" [class.active]="isMenuOpen">
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+        <a routerLink="/destinations" routerLinkActive="active" class="nav-link">Destinations</a>
+        <a routerLink="/hotels" routerLinkActive="active" class="nav-link">Hotels</a>
+        <a routerLink="/car-rental" routerLinkActive="active" class="nav-link">Car Rental</a>
+        <a routerLink="/community" routerLinkActive="active" class="nav-link">Community</a>
+        <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
+        <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn-search" (click)="toggleSearch()" title="Search" aria-label="Search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+        <button class="btn-login" (click)="openLogin()">Login</button>
+        <button class="btn-signup" (click)="openSignup()">Sign Up</button>
+        <button class="btn-menu" (click)="toggleMenu()" title="Menu" aria-label="Toggle menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Search Overlay -->
+<div class="search-overlay" [class.active]="showSearch" (click)="closeSearch()">
+  <div class="search-modal" (click)="$event.stopPropagation()">
+    <div class="search-header">
+      <h3>Search Adventures</h3>
+      <button class="close-btn" (click)="closeSearch()" aria-label="Close search">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="search-form">
+      <div class="search-input">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <input type="text" placeholder="Where do you want to go?" [(ngModel)]="searchDestination">
+      </div>
+      <div class="search-input">
+        <i class="fas fa-calendar" aria-hidden="true"></i>
+        <input type="date" [(ngModel)]="searchDate">
+      </div>
+      <div class="search-input">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <select [(ngModel)]="searchGuests">
+          <option value="">Number of Guests</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4+ Guests</option>
+        </select>
+      </div>
+      <button class="btn-search-main" (click)="performSearch()">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        Search Adventures
+      </button>
+    </div>
+  </div>
+</div>

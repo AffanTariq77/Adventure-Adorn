@@ -1,0 +1,75 @@
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title">Discover Pakistan's Hidden Treasures</h1>
+    <p class="hero-subtitle">Explore breathtaking landscapes, rich culture, and unforgettable adventures</p>
+    
+    <div class="search-container">
+      <div class="search-box">
+        <div class="search-input">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <input type="text" placeholder="Where do you want to go?" [(ngModel)]="searchDestination" 
+                 id="destination-input" aria-label="Destination">
+        </div>
+        <div class="search-input">
+          <i class="fas fa-calendar" aria-hidden="true"></i>
+          <input type="date" [(ngModel)]="searchDate" id="date-input" aria-label="Travel date">
+        </div>
+        <div class="search-input">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <select [(ngModel)]="searchGuests" id="guests-select" aria-label="Number of guests">
+            <option value="">Guests</option>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4+ Guests</option>
+          </select>
+        </div>
+        <button class="btn-search-main" (click)="searchTrips()" title="Search trips">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">Why Choose Adventure Adorn?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <h3>Curated Destinations</h3>
+        <p>Handpicked locations across Pakistan for the best travel experience</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Safe & Secure</h3>
+        <p>Your safety is our priority with 24/7 support and secure bookings</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3>Best Prices</h3>
+        <p>Competitive prices and exclusive deals for our community</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3>Eco-Friendly</h3>
+        <p>Supporting sustainable tourism and local communities</p>
+      </div>
+    </div>
+  </div>
+</section>
